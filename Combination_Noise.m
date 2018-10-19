@@ -28,7 +28,7 @@ end
 
 %Plotting original equation and equation with noise
 t = linspace(-4,4,n);
-x_noise = add_awgn_noise(x,snr);        %Adding noise
+x_noise = add_awgn_noise(x,snr);        %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan 
 plot(t,x,'Color',[.1,.1,.34]);
 hold on;
 plot(t,x_noise,'Color',[.2,.6,.15]);
@@ -47,13 +47,13 @@ t = t';
 for i = 1:length(t);
     if t(i) < 0;
         x_2 = abs(cos(pi/2*(t(i)-tau1))).*exp(-(C*sin(2*pi*(t(i)-tau1)))).*tan(pi./(1+exp(-(t(i)-tau1))));     %Equation when t is negative
-        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise
+        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
     elseif t(i) > 0;
         x_2 = abs(cos(pi/2*(t(i)+tau2))).*exp(-(C*sin(2*pi*(t(i)+tau2)))).*tan(pi./(1+exp(-(t(i)+tau2))));     %Equation when t is positive
-        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise
+        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
     else
         x_2 = 0;       %Equation when t is zero
-        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise
+        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
     end
 end
 
@@ -100,13 +100,13 @@ for j = 1:number_of_windows      %From 1 to number of windows within range
     for i = 1:length(t);
         if t(i) < 0;
             x_3 = abs(cos(pi/2*(t(i)-tau1))).*exp(-(C*sin(2*pi*(t(i)-tau1)))).*tan(pi./(1+exp(-(t(i)-tau1))));     %Equation when t is negative
-            x_noise3(i,1) = add_awgn_noise(x_3,snr);      %Adding noise
+            x_noise3(i,1) = add_awgn_noise(x_3,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
         elseif t(i) > 0;
             x_3 = abs(cos(pi/2*(t(i)+tau2))).*exp(-(C*sin(2*pi*(t(i)+tau2)))).*tan(pi./(1+exp(-(t(i)+tau2))));     %Equation when t is positive
-            x_noise3(i,1) = add_awgn_noise(x_3,snr);      %Adding noise
+            x_noise3(i,1) = add_awgn_noise(x_3,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
         else
             x_3 = 0;       %Equation when t is zero
-            x_noise3(i,1) = add_awgn_noise(x_3,snr);      %Adding noise
+            x_noise3(i,1) = add_awgn_noise(x_3,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
         end
     end
     
@@ -157,13 +157,13 @@ while start_pt < last_pt        %While-loop defining range
         for i = 1:length(t);
             if t(i) < 0;
                 x_4 = abs(cos(pi/2*(t(i)-tau1))).*exp(-(C*sin(2*pi*(t(i)-tau1)))).*tan(pi./(1+exp(-(t(i)-tau1))));
-                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise
+                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
             elseif t(i) > 0;
                 x_4 = abs(cos(pi/2*(t(i)+tau2))).*exp(-(C*sin(2*pi*(t(i)+tau2)))).*tan(pi./(1+exp(-(t(i)+tau2))));
-                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise
+                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
             else
                 x_4 = 0;
-                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise
+                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
             end
         end
         T_matrix = [];      %For-loop creating Vandermond matrix

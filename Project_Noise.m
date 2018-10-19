@@ -45,13 +45,13 @@ t = t';
 for i = 1:length(t);
     if t(i) < 0;
         x_2 = abs(cos(pi/2*(t(i)-tau1))).*exp(-(C*sin(2*pi*(t(i)-tau1)))).*tan(pi./(1+exp(-(t(i)-tau1))));     %Equation when t is negative
-        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise
+        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
     elseif t(i) > 0;
         x_2 = abs(cos(pi/2*(t(i)+tau2))).*exp(-(C*sin(2*pi*(t(i)+tau2)))).*tan(pi./(1+exp(-(t(i)+tau2))));     %Equation when t is positive
-        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise
+        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
     else
         x_2 = 0;       %Equation when t is zero
-        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise
+        x_noise2(i) = add_awgn_noise(x_2,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
     end
 end
 
@@ -60,7 +60,7 @@ T_matrix = [];
     for k = 1:length(t)
         T_matrix = [T_matrix t.^(k-1)];
     end
-% T_matrix = fliplr(vander(t));       %Creting T matrix
+% T_matrix = fliplr(vander(t));       %Creating T matrix
 % a = inv(transpose(T_matrix)*T_matrix)*transpose(T_matrix)*transpose(x_2);       %Solving for coefficients matrix
 p_coeff = fliplr(polyfit(t',x_noise2,PolDegree));
 p = T_matrix*p_coeff';

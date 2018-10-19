@@ -24,7 +24,7 @@ for t = linspace(-4,4,n);
     i = i+1;
 end
 t = linspace(-4,4,n);
-x_noise = add_awgn_noise(x,snr); %Adding noise to function. Function created by Mathuranathan Viswanathan
+x_noise = add_awgn_noise(x,snr); %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
 plot(t,x,'green','LineWidth',2);
 hold on;
 plot(t,x_noise,'red');
@@ -60,13 +60,13 @@ while start_pt < last_pt        %While-loop defining range
         for i = 1:length(t);
             if t(i) < 0;
                 x_4 = abs(cos(pi/2*(t(i)-tau1))).*exp(-(C*sin(2*pi*(t(i)-tau1)))).*tan(pi./(1+exp(-(t(i)-tau1))));
-                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise
+                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
             elseif t(i) > 0;
                 x_4 = abs(cos(pi/2*(t(i)+tau2))).*exp(-(C*sin(2*pi*(t(i)+tau2)))).*tan(pi./(1+exp(-(t(i)+tau2))));
-                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise
+                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
             else
                 x_4 = 0;
-                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise
+                x_noise4(i,1) = add_awgn_noise(x_4,snr);      %Adding noise - add_awgn_noise function created by Mathuranathan Viswanathan
             end
         end
         T_matrix = [];      %For-loop creating Vandermond matrix
